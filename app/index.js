@@ -13,7 +13,7 @@
 const app = express();
 
 app.listen(1337, ()=>{
-    console.log('server on port 1337')
+    console.log('server on port 1337', __dirname)
 })
 
 //ARCHIVOS ESTATICOS ENVIADOS A LA RUTA /
@@ -30,15 +30,6 @@ class Persona{
 }
 //PETICIONES HTTP DEL CLIENTE
 
-app.post('/sms', (req, res) => {
-  const twiml = new MessagingResponse();
-
-  twiml.message('The Robots are coming! Head for the hills!');
-
-  res.writeHead(200, {'Content-Type': 'text/xml'});
-  res.end(twiml.toString());
-  console.log(req.body)
-});
 
 app.post('/agregar_contenido', function(req, res){
     
