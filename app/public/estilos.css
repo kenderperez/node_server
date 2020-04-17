@@ -1,0 +1,83 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	background-color: #f8f8f8;
+	padding: 0px;
+	margin: 0px;
+}
+.numeros{
+	font-size: 70px;
+}
+.texto-claro{
+	color: grey;
+	font-size: 20px;
+}
+
+.menu{
+	background: #396afc;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2948ff, #396afc);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2948ff, #396afc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	color: white;
+}
+
+h1{
+	font-size: 27px;
+}
+.cajas{
+	
+	height: 200px;
+}
+
+.info{
+	margin-top: 20px;
+	padding: 10px;
+}
+.cajita{
+	padding-top: 12px;
+	padding-left: 40px;
+	width: 100%;
+	background-color: white;
+	height: 96%;
+	border: 1px #d7d6d6 solid;
+	box-shadow: 1px 0px 11px -5px rgba(179,179,179,1);
+}
+
+.cajita:hover{
+	
+	box-shadow: 1px 0px 11px 1px rgba(179,179,179,1);
+
+}
+#live{
+	width: 45px; 
+	margin-top: 3px; 
+	margin-bottom: 3px;
+	-webkit-box-shadow: 0px 0px 0px 4px rgba(255,255,255,0);
+	-webkit-transition:box-shadow .4s;
+
+}
+div.menu:hover #live{
+	-webkit-box-shadow:0px 0px 0px 0px rgba(255,255,255,.6);
+}
+
+.section2{
+	margin-top: 23px;
+	background: #396afc;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2948ff, #396afc);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2948ff, #396afc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	height: 300px;
+	color: white;
+	padding: 20px;
+}
+.container-fluid {
+  width: 100%;
+}
+.section3{
+	height: 55px;
+	color: white;
+	padding-top: 10px;
+	background-color: black;
+	margin-bottom: 0px;
+}

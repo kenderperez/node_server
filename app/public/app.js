@@ -1,27 +1,31 @@
-domRender();
+const casos= document.getElementById('casos');
+const recuperados = document.getElementById('recuperados');
+const muertes = document.getElementById('muertes');
+const casoshoy= document.getElementById('casostoday');
+const activos = document.getElementById('activos');
+const muerteshoy = document.getElementById('muertestoday');
+	
+/*este codigo trae los datos de la api*/	
+async function getData(pais) {
+  try{
+    let response = await fetch(`https://coronavirus-19-api.herokuapp.com/countries/${pais}`);
+    return await response.json();
+  }catch(err){
+    console.error(err);
+    // Handle errors here
+  }
 
-//SELECCION DE ELEMENTOS DEL DOM
-
-const btn = document.getElementById("btn");
-const container = document.getElementById("container");
-
-btn.addEventListener("click", domRender);
-
-function domRender(){
-     //FUNCION QUE ENVIA UNA PETICION A LA RUTA /APIREST Y GUARDA LA RESPUESTA DEL SERVIDOR EN UNA VARIABLE RESPONSE
-  fetch("/apirest").then(function(response) {
-    response.json().then(function(response) {
-      let personas = response;
-      while (container.hasChildNodes()) {
-        container.removeChild(container.firstChild);
-      }
-      //ESTE BUCLE RENDERIZA POR CADA PERSONA UN DIV EN EL DOM
-      for (let person of personas) {
-        const div = document.createElement("div");
-
-        div.innerHTML = `<p>nombre: ${person.nombre}  profesion: ${person.profesion} edad: ${person.edad}</p>`;
-        container.appendChild(div);
-      }
-    });
-  });
+  
+  
 }
+
+getData('venezuela').then((data)=>{
+	//aca tengo el objeto de los datos almacenado en la variable data
+	casos.innerHTML = data.cases;
+	recuperados.innerHTML = data.recovered;
+	muertes.innerHTML = data.deaths;
+	casoshoy.innerHTML = data.todayCases;
+	activos.innerHTML = data.active;
+	muerteshoy.innerHTML = data.todayDeaths;
+	console.log(data)
+})
